@@ -1,0 +1,78 @@
+--
+-- DbNinja v3.2.6 for MySQL
+--
+-- Dump date: 2016-07-04 13:40:59 (UTC)
+-- Server version: 5.5.49-0ubuntu0.14.04.1
+-- Database: blog
+--
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+
+CREATE DATABASE `blog` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `blog`;
+
+--
+-- Structure for table: posts
+--
+CREATE TABLE `posts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `data` text,
+  `date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+
+--
+-- Structure for table: users
+--
+CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+
+--
+-- Data for table: posts
+--
+LOCK TABLES `posts` WRITE;
+ALTER TABLE `posts` DISABLE KEYS;
+
+INSERT INTO `posts` (`id`,`title`,`data`,`date`) VALUES (2,'dassad','<p>asdasasdasdasdasdasdasd</p>','2016-07-04 13:30:56'),(4,'asdasd','sadasd','2016-07-04 14:01:08'),(5,'asdaoskd','podsajds','2016-07-04 14:14:48');
+
+ALTER TABLE `posts` ENABLE KEYS;
+UNLOCK TABLES;
+COMMIT;
+
+--
+-- Data for table: users
+--
+LOCK TABLES `users` WRITE;
+ALTER TABLE `users` DISABLE KEYS;
+
+INSERT INTO `users` (`id`,`username`,`password`,`email`) VALUES (1,'Demo','$2y$10$wJxa1Wm0rtS2BzqKnoCPd.7QQzgu7D/aLlMR5Aw3O.m9jx3oRJ5R2','demo@demo.com');
+
+ALTER TABLE `users` ENABLE KEYS;
+UNLOCK TABLES;
+COMMIT;
+
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+
